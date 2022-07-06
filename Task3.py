@@ -1,3 +1,5 @@
+# brr = id
+# arr = marks
 def insertionSort(brr, arr):
     for i in range(len(arr)-1):
         j = i

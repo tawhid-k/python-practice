@@ -7,8 +7,6 @@ def selectionSort(arr):
         cur = arr[i]
         arr[i] = arr[pos]
         arr[pos] = cur
-        
-
 
 my_file = open('input2.txt', 'r')
 output_file = open('output2.txt', 'w')

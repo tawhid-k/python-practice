@@ -18,10 +18,11 @@ def bubbleSort(arr):
 my_file = open('input1.txt', 'r')
 output_file = open('output1.txt', 'w')
 
-n = int(my_file.readline())
-arr = list(map(int, my_file.readline().split())) 
+n = int(my_file.readline()) # n = array size
+arr = list(map(int, my_file.readline().split())) # Total array as input 
 
 bubbleSort(arr)
 
 output_file.write(str(arr))
 output_file.close()
+
