@@ -60,6 +60,37 @@ def splitting(arr, n):
         return True
     else:
         return False
+
+def maxBunch(arr, n):
+    curValue = arr[0] - 1
+    maxRep = 0
+    curRep = 0
+    for i in arr:
+        if i != curValue:
+            maxRep = max(maxRep, curRep)
+            curRep = 1
+            curValue = i
+        else:
+            curRep += 1
+    maxRep = max(maxRep, curRep)
+    return maxRep
+
+def repetition(arr):
+    thisset = set()
+    occ = []
+    for i in arr:
+        thisset.add(i)
+    for i in thisset:
+        counter = 0
+        for j in arr:
+            if j == i:
+                counter += 1
+        if counter in occ:
+            return True
+        elif counter > 1:
+            occ.append(counter)
+    return False
+        
     
 source=[10,20,30,40,50,60]
 shiftLeft(source,3)
@@ -86,4 +117,8 @@ removeAll(source,7,2)
 print(source)
 
 print(splitting([1, 1, 1, 2, 1], 5))
-# 0 1 2 3 4 5 6 7
+
+print(maxBunch([1,1,2, 2, 1, 1,1,1], 8))
+
+print(repetition([4,5,6,6,4,3,6,4]))
+print(repetition([3,4,6,3,4,7,4,6,8,6,6]))
