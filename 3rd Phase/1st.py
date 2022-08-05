@@ -1,3 +1,4 @@
+#Assignment 220 - Task 1
 def shiftLeft(arr, k):
     n = len(arr)
     for i in range(n-k):
@@ -44,22 +45,24 @@ def removeAll(arr, n, elem):
             arr[i] = 0
             
 def splitting(arr, n):
-    i = -1
-    j = n
-    sum_forward = 0
-    sum_backward = 0
-    while i != j-1:
-        if sum_forward <= sum_backward:
-            i += 1
-            sum_forward += arr[i]
-        else:
-            j -= 1
-            sum_backward += arr[j]
+    Sum = 0
+    for i in arr:
+        Sum += i
+    leftSum = 0
+    for i in arr:
+        leftSum += i
+        if leftSum == (Sum - leftSum):
+            return True
+    return False
 
-    if sum_forward == sum_backward:
-        return True
-    else:
-        return False
+def arraySeries(n):
+    arr = []
+    for j in range(1,n+1):
+        for i in range(n-j):
+            arr.append(0)
+        for k in range(j, 0, -1):
+            arr.append(k)
+    return arr
 
 def maxBunch(arr, n):
     curValue = arr[0] - 1
@@ -118,7 +121,14 @@ print(source)
 
 print(splitting([1, 1, 1, 2, 1], 5))
 
+print(arraySeries(3))
+print(arraySeries(4))
+
 print(maxBunch([1,1,2, 2, 1, 1,1,1], 8))
 
 print(repetition([4,5,6,6,4,3,6,4]))
 print(repetition([3,4,6,3,4,7,4,6,8,6,6]))
+
+print(splitting([1, 1, 1, 2, 1] , 5))
+print(splitting( [2, 1, 1, 2, 1], 5))
+print(splitting([10, 3, 1, 2, 10], 5))
