@@ -1,0 +1,18 @@
+0 
+It is
+0 1 
+It is
+0 1 
+It is
+-1 0 
+It is
+-1 0 
+It is
+0 3 8 -1 
+It is
+0 3 8 -1 
+It is
+0 6 8 7 
+It is
+0 6 8 7 
+It is
