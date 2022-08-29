@@ -33,12 +33,12 @@ for t in range(testCase):
 
     graph = dict()
 
-    for i in range(n):
+    for i in range(1,n+1):
         lst = []
         for j in range(m):
-            if edges[j][0] == i+1:
+            if edges[j][0] == i:
                 lst.append([edges[j][1], edges[j][2]])
-        graph[i+1] = lst
+        graph[i] = lst
         
     dikstra(graph, 1)
     output_file.write(str(dis[n]) + '\n')
